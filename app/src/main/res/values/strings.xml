@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RetrofitDemo</string>
+
+    <string name="main_nav_open">navigation drawer open</string>
+    <string name="main_nav_close">navigation drawer close</string>
+</resources>
