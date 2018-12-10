@@ -3,6 +3,8 @@ package com.dzq.base;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,13 @@ public abstract class BaseActivity extends AppCompatActivity implements DBaseVie
     protected View mContentView;
     protected Activity mActivity;
 
+    protected Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+        }
+    };
     /**
      * 上次点击
      */
@@ -63,4 +72,6 @@ public abstract class BaseActivity extends AppCompatActivity implements DBaseVie
     public void onClick(View v) {
         if (!isFastClick()) onWidgetClick(v);
     }
+
+
 }

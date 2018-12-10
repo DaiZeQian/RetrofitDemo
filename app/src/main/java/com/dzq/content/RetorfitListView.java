@@ -2,9 +2,11 @@ package com.dzq.content;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.dzq.adapter.RetrofitListAdapter;
 import com.dzq.base.BaseBarActivity;
 import com.dzq.bean.JokerBean;
 import com.dzq.config.Config;
@@ -23,6 +25,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetorfitListView extends BaseBarActivity {
 
+
+    private RecyclerView myRecycler;
+    private RetrofitListAdapter listAdapter;
+
     @Override
     public void initData(@Nullable Bundle bundle) {
 
@@ -35,7 +41,7 @@ public class RetorfitListView extends BaseBarActivity {
 
     @Override
     public void initView(Bundle savedInstanceState, View contentView) {
-
+        myRecycler = findViewById(R.id.myRecycler);
     }
 
     @Override
