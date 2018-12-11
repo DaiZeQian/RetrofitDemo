@@ -22,12 +22,14 @@ public abstract class BaseBarActivity extends BaseActivity {
     protected Toolbar toolbar;//状态栏
     protected AppBarLayout abl;
     protected FrameLayout flActivityContainer;
-
+    private boolean isBakc = true;
 
     @SuppressLint("ResourceType")
     @Override
     protected void setBaseView(@LayoutRes int layoutId) {
-        Slidr.attach(this);
+        if (isBakc) {
+            Slidr.attach(this);
+        }
         //充气主布局
         mContentView = LayoutInflater.from(this).inflate(R.layout.activity_back, null);
         setContentView(mContentView);
@@ -38,8 +40,15 @@ public abstract class BaseBarActivity extends BaseActivity {
         if (layoutId > 0) {
             flActivityContainer.addView(LayoutInflater.from(this).inflate(layoutId, flActivityContainer, false));
         }
+    }
 
-
+    /**
+     * 设置是否可以滑动返回
+     *
+     * @param isBack
+     */
+    protected void setBack(boolean isBack) {
+        this.isBakc = isBack;
     }
 
     /**
@@ -50,7 +59,6 @@ public abstract class BaseBarActivity extends BaseActivity {
     protected ActionBar getToolBar() {
         return getSupportActionBar();
     }
-
 
 
 }

@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dzq.base.BaseDrawerActivity;
-import com.dzq.content.RetorfitListView;
+import com.dzq.content.GetRetorfitListView;
 
 public class MainActivity extends BaseDrawerActivity {
 
@@ -53,7 +53,7 @@ public class MainActivity extends BaseDrawerActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_retrofit_listview:
-                startActivity(new Intent(MainActivity.this, RetorfitListView.class));
+                startActivity(new Intent(MainActivity.this, GetRetorfitListView.class));
                 break;
         }
     }

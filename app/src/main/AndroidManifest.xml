@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.dzq.content.RetorfitListView" />
+        <activity android:name="com.dzq.content.GetRetorfitListView" />
+        <activity android:name="com.dzq.content.PostRetrofitListView" />
+
     </application>
 
 </manifest>
