@@ -3,6 +3,8 @@
     package="com.dzq.retrofitdemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.dzq.base.BaseApplication"
         android:allowBackup="true"
@@ -21,6 +23,7 @@
 
         <activity android:name="com.dzq.content.GetRetorfitListView" />
         <activity android:name="com.dzq.content.PostRetrofitListView" />
+        <activity android:name="com.dzq.content.DownLoadView" />
 
     </application>
 

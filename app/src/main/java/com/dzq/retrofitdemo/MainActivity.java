@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dzq.base.BaseDrawerActivity;
+import com.dzq.content.DownLoadView;
 import com.dzq.content.GetRetorfitListView;
 
 public class MainActivity extends BaseDrawerActivity {
@@ -56,5 +57,10 @@ public class MainActivity extends BaseDrawerActivity {
                 startActivity(new Intent(MainActivity.this, GetRetorfitListView.class));
                 break;
         }
+    }
+
+    public void easyDown(View view) {
+        startActivity(new Intent(MainActivity.this, DownLoadView.class));
+
     }
 }

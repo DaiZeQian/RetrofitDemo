@@ -57,19 +57,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Retorfit ListView" />
+                android:text="Easy Get" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="test2" />
+                android:text="Easy Post" />
 
             <Button
+                android:id="@+id/btn_down"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="test3" />
+                android:onClick="easyDown"
+                android:text="Easy Down" />
 
         </LinearLayout>
 
