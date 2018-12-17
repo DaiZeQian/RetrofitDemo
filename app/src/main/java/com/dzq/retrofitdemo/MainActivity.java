@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.dzq.base.BaseDrawerActivity;
 import com.dzq.content.DownLoadView;
 import com.dzq.content.GetRetorfitListView;
+import com.dzq.content.UploadView;
 
 public class MainActivity extends BaseDrawerActivity {
 
@@ -59,8 +60,23 @@ public class MainActivity extends BaseDrawerActivity {
         }
     }
 
+    /**
+     * 简单下载
+     *
+     * @param view
+     */
     public void easyDown(View view) {
         startActivity(new Intent(MainActivity.this, DownLoadView.class));
+
+    }
+
+    /**
+     * 简单上传
+     *
+     * @param view
+     */
+    public void easyUpload(View view) {
+        startActivity(new Intent(MainActivity.this, UploadView.class));
 
     }
 }

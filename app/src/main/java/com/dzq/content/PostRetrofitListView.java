@@ -32,7 +32,7 @@ public class PostRetrofitListView extends BaseBarActivity {
 
     @Override
     public void doSomeThing() {
-
+            //这里请求跟get处理是一样的 但是缺少post api 所以暂时未测试出来，等到布置大体完成 开始处理api问题
     }
 
     @Override

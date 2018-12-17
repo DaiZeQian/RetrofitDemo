@@ -2,11 +2,15 @@ package com.dzq.retrofit;
 
 import com.dzq.bean.JokerBean;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 import retrofit2.http.Streaming;
 
@@ -37,4 +41,15 @@ public interface RetrofitUrL {
     @Streaming
     @GET("u/13990136?v=4")
     Call<ResponseBody> downLoadFileWithFieldUrl();
+
+    /**
+     * 上传文件
+     *
+     * @param dec  描述
+     * @param body 文件
+     * @return
+     */
+    @Multipart
+    @POST("")
+    Call<ResponseBody> upload(@Part("dec") RequestBody dec, @Part MultipartBody.Part body);
 }
