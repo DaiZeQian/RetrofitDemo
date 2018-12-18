@@ -54,6 +54,8 @@ public class GetRetorfitListView extends BaseBarActivity {
 
     @Override
     public void doSomeThing() {
+
+
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Config.JH_BASE_URL).
                 //设置数据解析器
                         addConverterFactory(GsonConverterFactory.create()).build();
