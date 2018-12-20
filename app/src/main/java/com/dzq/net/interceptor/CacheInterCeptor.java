@@ -1,6 +1,8 @@
-package com.dzq.net;
+package com.dzq.net.interceptor;
 
 import android.content.Context;
+
+import com.dzq.net.utils.NetworkUtils;
 
 import java.io.IOException;
 
@@ -15,11 +17,11 @@ import okhttp3.Response;
  * 一次性 不可更改 一般建议添加项目常量
  */
 
-public class BaseCacheInterCeptor implements Interceptor {
+public class CacheInterCeptor implements Interceptor {
 
     private Context context;
 
-    public BaseCacheInterCeptor(Context context) {
+    public CacheInterCeptor(Context context) {
         this.context = context;
     }
 

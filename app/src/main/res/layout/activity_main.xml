@@ -78,8 +78,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:onClick="easyLoad"
+                android:onClick="easyUpload"
                 android:text="Easy Upload" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="rxGet"
+                android:text="RxGET" />
 
         </LinearLayout>
 

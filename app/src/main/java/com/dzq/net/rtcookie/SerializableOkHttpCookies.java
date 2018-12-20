@@ -1,4 +1,4 @@
-package com.dzq.net;
+package com.dzq.net.rtcookie;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

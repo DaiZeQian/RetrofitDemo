@@ -26,6 +26,7 @@
         <activity android:name="com.dzq.content.PostRetrofitListView" />
         <activity android:name="com.dzq.content.DownLoadView" />
         <activity android:name="com.dzq.content.UploadView" />
+        <activity android:name="com.dzq.content.RxGetView" />
     </application>
 
 </manifest>

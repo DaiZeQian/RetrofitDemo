@@ -6,8 +6,9 @@ import android.view.View;
 
 import com.dzq.base.BaseBarActivity;
 import com.dzq.config.Config;
-import com.dzq.net.BaseBaseObserver;
 import com.dzq.net.RetrofitUtils;
+import com.dzq.net.rtinterface.DataObserver;
+import com.dzq.retrofitdemo.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Map;
  * Created by admin on 2018/12/18.
  */
 
-public class RxGetView extends BaseBarActivity{
+public class RxGetView extends BaseBarActivity {
     @Override
     public void initData(@Nullable Bundle bundle) {
 
@@ -24,7 +25,7 @@ public class RxGetView extends BaseBarActivity{
 
     @Override
     public int bindLayout() {
-        return 0;
+        return R.layout.activity_rxget;
     }
 
     @Override
@@ -38,9 +39,10 @@ public class RxGetView extends BaseBarActivity{
         maps.put("sort", "desc");
         maps.put("time", System.currentTimeMillis() / 1000 + "");
         maps.put("key", Config.JH_JOKE_APPKEY);
-        RetrofitUtils.getInstance(this).createBaseApi().get("joke/content/list.php", maps, new BaseBaseObserver() {
+        RetrofitUtils.getInstance(this).createBaseApi().get("joke/content/list.php", maps, new DataObserver() {
+
             @Override
-            protected void onError(String errorMsg) {
+            protected void onError(String errorMsg, String error) {
 
             }
 

@@ -1,4 +1,4 @@
-package com.dzq.net;
+package com.dzq.net.interceptor;
 
 import java.io.IOException;
 import java.util.Map;
@@ -34,14 +34,14 @@ import okhttp3.Response;
  * 若有侵权请尽快联系删除
  */
 
-public class BaseInterceptor implements Interceptor {
+public class HeaderInterceptor implements Interceptor {
 
     /**
      * 重新定义请求头
      */
     private Map<String, String> headers;
 
-    public BaseInterceptor(Map<String, String> headers) {
+    public HeaderInterceptor(Map<String, String> headers) {
         this.headers = headers;
     }
 

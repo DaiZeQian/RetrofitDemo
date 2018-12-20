@@ -1,4 +1,4 @@
-package com.dzq.net;
+package com.dzq.net.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

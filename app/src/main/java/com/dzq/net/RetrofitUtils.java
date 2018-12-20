@@ -3,6 +3,11 @@ package com.dzq.net;
 import android.content.Context;
 
 import com.dzq.config.Config;
+import com.dzq.net.interceptor.CacheInterCeptor;
+import com.dzq.net.interceptor.HeaderInterceptor;
+import com.dzq.net.interceptor.RtLoggerInterceptor;
+import com.dzq.net.rtcookie.CookieManager;
+import com.dzq.net.rtinterface.BaseObserver;
 
 import java.io.File;
 import java.util.Map;
@@ -47,11 +52,14 @@ public class RetrofitUtils {
     }
 
     private RetrofitUtils() {
+
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new RtLoggerInterceptor());
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         okHttpClient = new OkHttpClient.Builder()
-                .addNetworkInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .addNetworkInterceptor(loggingInterceptor)
                 .cookieJar(new CookieManager(context))
-                .addInterceptor(new BaseCacheInterCeptor(context))
-                .addNetworkInterceptor(new BaseCacheInterCeptor(context))
+                .addInterceptor(new CacheInterCeptor(context))
+                .addNetworkInterceptor(new CacheInterCeptor(context))
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .connectionPool(new ConnectionPool(8, 15, TimeUnit.SECONDS))
@@ -98,7 +106,7 @@ public class RetrofitUtils {
     }
 
     public static void changeHeader(Map<String, String> headers) {
-        okHttpClient.newBuilder().addInterceptor(new BaseInterceptor(headers)).build();
+        okHttpClient.newBuilder().addInterceptor(new HeaderInterceptor(headers)).build();
         builder.client(httpClient.build()).build();
     }
 
@@ -118,9 +126,17 @@ public class RetrofitUtils {
         return retrofit.create(service);
     }
 
-
+    /**
+     * get方法
+     *
+     * @param url
+     * @param maps
+     * @param baseObserver
+     */
     public void get(String url, Map<String, String> maps, BaseObserver baseObserver) {
-        baseApiService.get(url, maps).compose(Transformer.<BaseRespose<Object>>switchSchedulers()).subscribe(baseObserver);
+        baseApiService.get(url, maps)
+                .compose(com.dzq.net.Transformer.<BaseRespose<Object>>switchSchedulers())
+                .subscribe(baseObserver);
     }
 
 
