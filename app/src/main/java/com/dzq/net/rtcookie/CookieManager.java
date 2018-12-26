@@ -18,7 +18,7 @@ public class CookieManager implements CookieJar {
     private static PersistentCookieStore cookieStore;
 
     public CookieManager(Context context) {
-        context = context;
+        this.context = context;
         if (cookieStore == null) {
             cookieStore = new PersistentCookieStore(context);
         }
